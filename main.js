@@ -7,7 +7,7 @@ var TraerDato = document.querySelector('#btn');
 
         var n = "";
         var m = "";
-        var c = ""
+        var c = "";
 
         var datoN = document.querySelector('#n').value;
         var datoM = document.querySelector('#m').value;
@@ -21,7 +21,11 @@ var TraerDato = document.querySelector('#btn');
                 n = "aa"
             }
             else if(datoN == 3){
-                n = "aaa"            }
+                n = "aaa"
+            }
+            else if(datoN == 4){
+                n = "aaaa"
+            }
 
             if(datoM == 1){
                 m= 'b'
@@ -31,6 +35,9 @@ var TraerDato = document.querySelector('#btn');
             else if(datoM==3){
                 m = 'bbb'
 
+            }
+            else if(datoM==4){
+                m = 'bbb'
             }
 
             var ValorC =  parseInt(datoN * 2 + m);
@@ -44,6 +51,15 @@ var TraerDato = document.querySelector('#btn');
             }else if(ValorC==4){
                 c = 'cccc'
             }
+            else if(ValorC==5){
+                c = 'ccccc'
+            }
+            else if(ValorC==6){
+                c = 'cccccc'
+            }
+            else if(ValorC==7){
+                c = 'cccccc'
+            }
 
         return  resultado.innerHTML = "el valor N es: " + datoN + " y  M : " + datoM + "<br>" +"la cadena construida es: " + ( n + m + c)
         
@@ -54,15 +70,22 @@ var TraerDato = document.querySelector('#btn');
         var cadena = document.querySelector('#btn2');
 
          cadena.addEventListener('click', event =>{
-                var cadena = document.querySelector('#cadena').value;
-                var arreglo = Array.from(cadena)
-               
-                for(var i = 0; i<= arreglo.lenght; i++)
 
-                    if(arreglo[0]=== "b"){
-                       console.log("la cadena debe empezar por a");
+                var cadena = document.querySelector('#cadena').value;
+                
+                var arreglo = Array.from(cadena)
+                var i = 0;
+                while(i>=arreglo[i].length){
+
+                    if(arreglo[0]!= "a"){
+                       alert("la cadena debe empezar por a");
 
                     }
+                    else if(arreglo[0] == "a"){
+                        alert("la cadena"+ arreglo + "es valida par este lenguaje");
+                    }
+                    console.log(arreglo[i]);
+                }
             
                 var result =  document.querySelector('#resultadoCadena');
                 return  result.innerHTML = "la cadena digitada es:" + "<br>"+ arreglo;
